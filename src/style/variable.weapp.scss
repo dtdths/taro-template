@@ -1,0 +1,49 @@
+// 超出内容显示省略号
+@mixin ellipsis($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  @if ($line == 1) {
+    white-space: nowrap;
+  }
+  @else {
+    display: -webkit-box;
+    visibility: visible;
+
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    content: '.';
+  }
+
+  *height: 1%;
+}
+
+// 管理z-index
+@mixin zIndex($selector) {
+  // detail: cp-modal > detail-footer > detail-recommendPopup-popup > (detail-recommendPopup-tips, detail-header, detail-ordersTip, cp-backTop)
+  $elmsZIndex: (
+    "detail-header": 800, // 商详 header
+    // "detail-recommendPopup-tips": 800, // 商详 无货推荐tip
+    "detail-recommendPopup-popup": 900, // 商详 无货推荐弹层
+    "detail-footer": 1000, // 商详 footer
+    "detail-footer-box": 1100, // 商详 footer 按钮
+    "detail-ordersTip": 800, // 商详 待支付订单
+    "cp-backTop": 800, // 公共-回顶按钮
+    "cp-modal": 1500,// 公共-弹层
+    "andr_webview_refresh_mask": 9999999, // 安卓 h5 visibilitychange 兼容方案，顶级
+  );
+
+  z-index: map-get($map: $elmsZIndex, $key: $selector);
+}

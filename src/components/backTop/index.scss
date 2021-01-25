@@ -1,0 +1,27 @@
+.cp-backTop{
+  position: fixed;
+  right: 24px;
+  bottom: 120px;
+  flex-direction: column;
+  width: 90px;
+  height: 90px;
+  background-color: rgba(0,0,0,0.6668);
+  background-image: url('~@/static/imgs/back-top.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 37px;
+  border-radius: 45px;
+  box-shadow: 0 11px 12px -4px rgba(144,144,144,0.29);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 150ms ease-in-out;
+  // .backTop-img{
+  //   width: 114px;
+  //   height: 119px;
+  // }
+  @include zIndex('cp-backTop');
+  &.isShow{
+    visibility: visible;
+    opacity: 1;
+  }
+}

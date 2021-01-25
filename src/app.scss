@@ -1,0 +1,154 @@
+// @import './style/icon.scss';
+// 正黑体
+@font-face {
+  font-family: 'JDZhengHei-Regular';
+  font-display: swap;
+  src: url('https://ydcx.360buyimg.com/font/JDZhengHei-01-Regular.ttf') format('truetype');
+}
+
+html,#app,page{
+  background: #f7f7f7;
+}
+view,
+div,
+text,
+span,
+.hydrated
+{
+  font-size: 28px;
+  font-family: PingFangSC-Regular,Arial,Helvetica,sans-serif;
+}
+taro-image-core.hydrated{
+  font-size: 0;
+}
+view,
+div,
+.hydrated
+{
+  box-sizing: border-box;
+}
+img{
+  -webkit-touch-callout: none;
+}
+.taro-tabbar__panel{
+  .taro_page{
+    // padding-bottom: env(safe-area-inset-bottom) solid #f7f7f7;
+    min-height: 100vh !important;
+  }
+}
+.scrollForbid {
+  position: fixed;
+  height: 100%;
+}
+// https://github.com/NervJS/taro/issues/7908
+taro-checkbox-core,
+taro-checkbox-group-core,
+taro-radio-core,
+taro-radio-group-core,
+taro-swiper-core,
+taro-swiper-item-core,
+taro-audio-core,
+taro-block-core,
+taro-button-core,
+taro-camera-core,
+taro-canvas-core,
+taro-cover-image-core,
+taro-cover-view-core,
+taro-form-core,
+taro-icon-core,
+taro-image-core,
+taro-input-core,
+taro-label-core,
+taro-moveable-area-core,
+taro-moveable-view-core,
+taro-navigator-core,
+taro-open-data-core,
+taro-picker-view-column-core,
+taro-picker-view-core,
+taro-progress-core,
+taro-pull-to-refresh,
+taro-rich-text-core,
+taro-scroll-view-core,
+taro-slider-core,
+taro-switch-core,
+taro-tabbar,
+taro-text-core,
+taro-textarea-core,
+taro-view-core,
+taro-web-view-core,
+taro-picker-core,
+taro-picker-group,
+taro-video-core,
+taro-video-control,
+taro-video-danmu {
+  visibility: visible;
+  &::after,&::before{
+    visibility: visible;
+  }
+}
+
+.andr_webview_refresh_mask{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  @include zIndex('andr_webview_refresh_mask');
+}
+
+.hide_scrollbar{
+  ::-webkit-scrollbar {
+    display:none;
+    width:0;
+    height:0;
+    color:transparent;
+  }
+}
+
+.safe-area-inset-bottom {
+  border-width: constant(safe-area-inset-bottom);
+  border-width: env(safe-area-inset-bottom);
+  border-bottom-color: #f7f7f7;
+  border-bottom-style: solid;
+}
+.flex_cen_cen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex_cen_bet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex_cen_start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_top_bet {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.flex_top_cen {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flex_cen_end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex_top_start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.flex_wrap {
+  flex-wrap: wrap;
+}
